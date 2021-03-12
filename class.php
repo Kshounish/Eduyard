@@ -131,14 +131,14 @@ include 'dbcon.php';
 									<fieldset>
 										
                                         <div class="control-group">											
-											<label class="control-label" for="radiobtns">Class:</label>
+											<label class="control-label" for="radiobtns"></label>
 											
                                             <div class="controls">
                                               <div class="btn-group">
                                               <a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> Select Class</a>
-                                              <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-                                              <ul class="dropdown-menu">
-                                               
+                                              <!--<a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+                                              <ul class="dropdown-menu">-->
+                                               <select>
                                                 <?php
                                                   $res=mysqli_query($con,"select * from class");
                                                   while($row=mysqli_fetch_array($res))
@@ -148,6 +148,7 @@ include 'dbcon.php';
                                                     echo "</option>";
                                                   }
                                                 ?>
+                                                </select>
                                                 
                                                 </ul>
                                             </div>
@@ -158,7 +159,7 @@ include 'dbcon.php';
   
 										 <br />
 										<div class="form-actions">
-											<button type="submit" class="btn btn-primary">Proceed</button> 
+											<button type="submit" class="btn btn-primary" >Proceed</button> 
                       
 											<button class="btn">Cancel</button>
 										</div> <!-- /form-actions -->
@@ -186,14 +187,8 @@ include 'dbcon.php';
 				</div> <!-- /widget -->
 	      		
 		    </div> <!-- /span8 -->
-	      	
-	      	
-	      	
-	      	
-	     
-	
-	  
-    
+	      
+          
 
     
 <div class="widget-content nopadding">
@@ -211,7 +206,8 @@ include 'dbcon.php';
               </thead>
               <tbody>
                 <?php
-                $res=mysqli_query($con,"select * from student");
+                
+                $res=mysqli_query($con,"select * from student ");
                 while ($row=mysqli_fetch_array($res))
                 {
                   ?>
@@ -260,6 +256,7 @@ include 'dbcon.php';
 	
 </div> <!-- /footer -->
     
+
 
 
 <script src="js/jquery-1.7.2.min.js"></script>
